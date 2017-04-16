@@ -1,0 +1,22 @@
+# swap files
+*~
+*.swn
+*.swo
+*.swp
+\#*\#
+
+# compiled files
+tim
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.o
+*.obj
+*.so
+*.so.*
+
+# misc
+tags
+config.h
