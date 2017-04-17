@@ -96,9 +96,8 @@ get_tim_ans(char *s)
 	char args[MAX_CMD];
 
 	s = str_replace(s, "to", "");
-	s = str_rmspaces(s);
-	cmds = str_split(s, ' ', &c);
-	free(s);
+	char *tmp = str_rmspaces(s);
+	cmds = str_split(tmp, ' ', &c);
 
 	if (c > 2) {
 		if (strcmp(cmds[1], "my") == 0)
@@ -118,6 +117,12 @@ get_tim_ans(char *s)
 		snprintf(args, sizeof(args), "%s %s %s", fname, cmds[i], cmds[i+1]);
 		ans = tim_lua_run(get_path("plugins/json-set.lua"), args);
 	}
+
+	free(s);
+	free(tmp);
+	for (int j = 0; j < c; j++)
+		free(cmds[j]);
+	free(cmds);
 
 	return ans;
 }
