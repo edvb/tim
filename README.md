@@ -1,4 +1,4 @@
-# tim - small extendable personal assistant
+# tim - extendable personal assistant
 
 ## SYNOPSIS
 
